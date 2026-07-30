@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Request a Song</title>
+  <style>
+    body { background: #0f172a; color: white; font-family: sans-serif; padding: 20px; }
+    input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 6px; border: none; font-size: 18px; }
+    .song { padding: 12px; background: #1e293b; margin-bottom: 8px; border-radius: 6px; }
+    button { width: 100%; padding: 14px; background: #3b82f6; border: none; border-radius: 6px; font-size: 20px; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Search Songs</h1>
+
+  <input id="search" placeholder="Search by title or artist..." />
+
+  <div id="results"></div>
+
+  <script>
+    async function loadSongs() {
+      const res = await fetch("/songbook.json");
+      return await res.json();
+    }
+
+    loadSongs().then((songs) => {
+      const search = document.getElementById("search");
+      const results = document.getElementById("results");
+
+      search.addEventListener("input", () => {
+        const q = search.value.toLowerCase();
+        results.innerHTML = "";
+
+        songs
+          .filter(s => s.title.toLowerCase().includes(q) || s.artist.toLowerCase().includes(q))
+          .slice(0, 50)
+          .forEach(s => {
+            const div = document.createElement("div");
+            div.className = "song";
+            div.innerHTML = `<strong>${s.title}</strong><br>${s.artist}`;
+            div.onclick = () => {
+              fetch(`/request?song=${encodeURIComponent(s.path)}`);
+              alert("Song requested!");
+            };
+            results.appendChild(div);
+          });
+      });
+    });
+  </script>
+</body>
+</html>
