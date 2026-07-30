@@ -1,0 +1,117 @@
+.pl-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #16161a;
+  border: 1px solid #222;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  transition: background 0.15s ease;
+}
+
+.pl-item:hover {
+  background: #1d1d21;
+}
+
+.pl-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.pl-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.pl-artist {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.pl-meta {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pl-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #000;
+  font-weight: bold;
+}
+
+.pl-badge.bpm {
+  background: #00ffff;
+}
+
+.pl-badge.key {
+  background: #3b82f6;
+}
+
+.pl-badge.dur {
+  background: #888;
+}
+
+.pl-actions {
+  display: flex;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+.pl-btn {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  transition: background 0.15s ease;
+}
+
+.pl-btn.deck1 {
+  background: #00ffff;
+  color: #000;
+}
+
+.pl-btn.deck2 {
+  background: #ff00ff;
+  color: #000;
+}
+
+.pl-btn.next {
+  background: #22c55e;
+  color: #000;
+}
+
+.pl-btn.remove {
+  background: #ff5555;
+  color: #000;
+}
+
+.pl-reorder {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.pl-reorder-btn {
+  background: #222;
+  border: 1px solid #444;
+  color: #ccc;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.pl-reorder-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}

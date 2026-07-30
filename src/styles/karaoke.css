@@ -1,0 +1,189 @@
+/* ============================================================
+   KARAOKE SCREEN GRID
+   ============================================================ */
+.karaoke-screen {
+  display: grid;
+  grid-template-rows: auto 50% 10% 40%;
+  height: 100vh;
+  background: #020617;
+  color: #e5e7eb;
+  overflow: hidden;
+}
+
+/* ============================================================
+   MAIN GRID (Singer rotation + CDG)
+   ============================================================ */
+.karaoke-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+}
+
+.karaoke-left,
+.karaoke-right {
+  background: #0b1120;
+  border: 1px solid var(--vw-border);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: var(--vw-glow);
+}
+
+/* ============================================================
+   SCOREBOARD
+   ============================================================ */
+.karaoke-scoreboard {
+  text-align: center;
+  padding: 12px;
+  background: #0b1120;
+  border-top: 1px solid var(--vw-border);
+}
+
+.score-title {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.score-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* ============================================================
+   KARAOKE DECK ROW
+   ============================================================ */
+.karaoke-deck-row {
+  padding: 12px;
+}
+
+/* ============================================================
+   SONG BROWSER
+   ============================================================ */
+.karaoke-browser {
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+.karaoke-overlay {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  transition: opacity 0.5s;
+}
+
+/* Background Engine Canvas */
+.vw-bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* Fade states */
+.vw-bg-fade-in {
+  opacity: 0;
+  filter: blur(8px);
+}
+
+.vw-bg-ready {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* Favorite Songs Manager */
+.fav-manager {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #e5e7eb;
+}
+
+.fav-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #00ffff;
+}
+
+.fav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fav-item {
+  background: #1a1a1d;
+  border: 1px solid #333;
+  padding: 6px 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fav-song {
+  font-size: 13px;
+  color: #ddd;
+}
+
+.fav-remove-btn {
+  background: #e11d48;
+  border: none;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.15s;
+}
+
+.fav-remove-btn:hover {
+  background: #ff4d6a;
+}
+
+.fav-add {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.fav-input {
+  flex: 1;
+  padding: 8px;
+  background: #1e1e22;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.fav-add-btn {
+  background: #3b82f6;
+  border: none;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.15s;
+}
+
+.fav-add-btn:hover {
+  background: #60a5fa;
+}

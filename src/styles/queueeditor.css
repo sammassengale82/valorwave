@@ -1,0 +1,65 @@
+.qe-root {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.qe-title {
+  margin: 0 0 6px 0;
+  color: #888;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.qe-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qe-item {
+  padding: 6px 10px;
+  background: #1a1a1a;
+  border: 1px solid #252525;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #ccc;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.12s ease, border-color 0.12s ease, opacity 0.12s ease;
+  user-select: none;
+}
+
+.qe-item:hover {
+  background: #222;
+}
+
+.qe-item--dragging {
+  background: #222;
+  border: 1px dashed #00aaff;
+  color: #00aaff;
+  opacity: 0.55;
+}
+
+.qe-index {
+  color: #555;
+  font-family: monospace;
+  font-size: 12px;
+  min-width: 20px;
+}
+
+.qe-track-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

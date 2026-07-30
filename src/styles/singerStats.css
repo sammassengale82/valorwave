@@ -1,0 +1,30 @@
+.ss-panel {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #e5e7eb;
+}
+
+.ss-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00ffff;
+  margin-bottom: 4px;
+}
+
+.ss-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.ss-value {
+  font-size: 14px;
+  color: #fff;
+}

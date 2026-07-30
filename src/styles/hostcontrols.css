@@ -1,0 +1,47 @@
+.host-controls {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.host-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e5e7eb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.host-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.host-btn {
+  background: #1f1f26;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  padding: 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.12s ease;
+  user-select: none;
+}
+
+.host-btn:hover {
+  background: #24242c;
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.host-btn:active {
+  background: #1a1a22;
+  border-color: #00aaff;
+}

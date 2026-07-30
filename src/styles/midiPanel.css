@@ -1,0 +1,152 @@
+.mp-panel {
+  background: #121214;
+  border: 1px solid #252529;
+  border-radius: 6px;
+  padding: 16px;
+  color: #e0e0e6;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mp-title {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Section */
+.mp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #222;
+}
+
+/* Buttons */
+.mp-btn-primary {
+  background: #007acc;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.mp-btn-listen {
+  background: #222;
+  border: 1px solid #444;
+  color: #aaa;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.15s;
+}
+
+.mp-btn-listen.mp-listening {
+  background: #aa3300;
+  border-color: #ffaa55;
+  color: #ffaa55;
+}
+
+/* Fields */
+.mp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mp-label {
+  font-size: 11px;
+  color: #666;
+}
+
+.mp-select {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Last message */
+.mp-lastmsg {
+  background: #09090b;
+  border: 1px solid #1c1c1f;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.mp-lastmsg-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.mp-lastmsg-label {
+  color: #666;
+}
+
+.mp-lastmsg-value {
+  color: #00ffcc;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.mp-prompt {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #ffcc00;
+}
+
+/* Actions */
+.mp-subtitle {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.mp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.mp-action-btn {
+  background: #1a1a1c;
+  border: 1px solid #252528;
+  color: #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mp-action-btn:hover {
+  background: #222;
+}
+
+.mp-action-active {
+  background: #2a2200 !important;
+  border-color: #ffcc00 !important;
+  color: #ffcc00 !important;
+}
+
+.mp-action-icon {
+  font-size: 10px;
+  opacity: 0.4;
+}

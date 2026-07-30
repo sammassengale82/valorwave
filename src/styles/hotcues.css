@@ -1,0 +1,57 @@
+.hotcues-root {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 6px 0;
+}
+
+/* Base pad styling */
+.hotcue-pad {
+  background: #1a1a1c;
+  border: 1px solid #2a2a2e;
+  border-radius: 6px;
+  padding: 10px 4px;
+  color: #55555d;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.12s ease;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Active cue styling */
+.hotcue-active {
+  background: color-mix(in srgb, var(--pad-color) 25%, #1a1a1c);
+  border-color: var(--pad-color);
+  color: #fff;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--pad-color) 40%, transparent);
+}
+
+/* Hover */
+.hotcue-pad:hover {
+  background: #24242c;
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.hotcue-active:hover {
+  background: color-mix(in srgb, var(--pad-color) 35%, #1a1a1c);
+  border-color: var(--pad-color);
+  color: var(--pad-color);
+}
+
+/* Pad index label */
+.hotcue-pad-index {
+  font-size: 9px;
+  opacity: 0.5;
+}
+
+/* Pad main label */
+.hotcue-pad-label {
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -1,0 +1,47 @@
+/* Container */
+.sh-panel {
+  padding: 16px;
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Title */
+.sh-title {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00ffff;
+}
+
+/* Empty state */
+.sh-empty {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* History item */
+.sh-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Song name */
+.sh-song {
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Date */
+.sh-date {
+  font-size: 12px;
+  color: #9ca3af;
+}

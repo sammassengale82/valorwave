@@ -1,0 +1,43 @@
+.vw-stems-panel {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 10px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #e5e7eb;
+}
+
+.vw-stems-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.vw-stems-knob-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vw-stems-knob-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.vw-stems-knob {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.vw-stems-label {
+  font-size: 10px;
+  color: #ccc;
+  text-transform: capitalize;
+}

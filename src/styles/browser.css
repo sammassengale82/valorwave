@@ -1,0 +1,135 @@
+/* ROOT */
+.vw-browser {
+  background: #0f0f12;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* HEADER */
+.browser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 28px;
+  margin-bottom: 6px;
+}
+
+.browser-header h2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* GRID */
+.browser-three-section-container {
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* PANELS */
+.browser-column-panel {
+  background: #111115;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.browser-center-panel {
+  padding: 0;
+}
+
+.browser-automix-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* HEADERS */
+.browser-column-panel h4 {
+  color: #00ffff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px 0 4px 0;
+}
+
+.browser-column-panel h4:first-of-type {
+  margin-top: 0;
+}
+
+/* NAV ITEMS */
+.browser-nav-item {
+  font-size: 11px;
+  color: #aaa;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.browser-nav-item:hover {
+  background: #1c1c24;
+  color: #fff;
+}
+
+/* BUTTONS */
+.browser-btn {
+  background: #1f1f26;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.browser-btn:hover {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+/* TABLE */
+.browser-table-wrapper {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  text-align: left;
+}
+
+.browser-table-wrapper th {
+  background: #16161a;
+  color: #888;
+  font-weight: bold;
+  padding: 6px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-icon {
+  margin-left: 4px;
+  font-size: 10px;
+}
+
+.sort-icon--inactive {
+  opacity: 0.3;
+}
+
+.sort-icon--active {
+  color: #00aaff;
+}

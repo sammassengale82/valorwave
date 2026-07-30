@@ -1,0 +1,91 @@
+.karaoke-deck {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #e5e7eb;
+}
+
+/* CDG Preview Window */
+.karaoke-preview {
+  width: 300px;
+  height: 216px;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 8px #000;
+  align-self: center;
+}
+
+/* Controls */
+.karaoke-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.karaoke-btn {
+  background: #1f1f26;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  padding: 6px;
+  font-size: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  text-align: center;
+}
+
+.karaoke-btn:hover {
+  background: #24242c;
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.karaoke-play {
+  border-color: #00ff99;
+  color: #00ff99;
+}
+
+.karaoke-play:hover {
+  background: #1a2f26;
+  border-color: #00ffaa;
+  color: #00ffaa;
+}
+
+.karaoke-stop {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.karaoke-stop:hover {
+  background: #2f1a1a;
+  border-color: #ff6666;
+  color: #ff6666;
+}
+
+/* Seek Bar */
+.karaoke-seek {
+  grid-column: span 3;
+  width: 100%;
+  margin-top: 4px;
+  background: #222;
+  border: 1px solid #333;
+  height: 4px;
+  cursor: pointer;
+}
+
+/* Metadata */
+.karaoke-meta {
+  font-size: 11px;
+  color: #ccc;
+  margin-top: 6px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}

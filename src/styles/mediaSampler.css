@@ -1,0 +1,58 @@
+.ms-panel {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 16px;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ms-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00ffff;
+}
+
+.ms-subtitle {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.ms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.ms-pad {
+  background: #16161a;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.ms-pad-label {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.ms-pad-btn {
+  background: #3b82f6;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.15s;
+}
+
+.ms-pad-btn:hover {
+  background: #60a5fa;
+}

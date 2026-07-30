@@ -1,0 +1,72 @@
+.tp-root {
+  padding: 10px;
+  background: #161616;
+  border-radius: 4px;
+  border: 1px solid #282828;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tp-title {
+  margin: 0;
+  color: #888;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.tp-waveform-container {
+  position: relative;
+  height: 48px;
+  background: #090909;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+/* Outgoing waveform */
+.tp-wave--current {
+  position: absolute;
+  inset: 0;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+/* Incoming waveform */
+.tp-wave--next {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  transform: scaleX(0.95);
+  transform-origin: right;
+}
+
+/* Crossfade anchor line */
+.tp-anchor {
+  position: absolute;
+  left: 70%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #00aaff;
+  box-shadow: 0 0 4px #00aaff;
+  z-index: 3;
+}
+
+.tp-footer {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tp-duration {
+  color: #00ffcc;
+  font-weight: bold;
+  font-family: monospace;
+}

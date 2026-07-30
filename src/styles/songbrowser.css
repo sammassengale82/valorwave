@@ -1,0 +1,130 @@
+.songbrowser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #111;
+  color: #e0e0e0;
+}
+
+/* TOP BAR */
+.songbrowser-top {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #161616;
+  border-bottom: 1px solid #222;
+}
+
+.songbrowser-search {
+  flex: 1;
+  background: #222;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+}
+
+.songbrowser-search:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
+}
+
+.songbrowser-singer-select {
+  background: #222;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 12px;
+  max-width: 160px;
+}
+
+/* LIST */
+.songbrowser-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* HEADER ROW */
+.songbrowser-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 140px;
+  padding: 6px 12px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2d2d2d;
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+}
+
+.songbrowser-header-actions {
+  text-align: right;
+}
+
+/* ROWS */
+.songbrowser-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 140px;
+  align-items: center;
+  padding: 6px 12px;
+  border-bottom: 1px solid #1a1a1a;
+  font-size: 12px;
+}
+
+.songbrowser-row:hover {
+  background: #181818;
+}
+
+.songbrowser-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 8px;
+}
+
+.songbrowser-title {
+  color: #fff;
+}
+
+.songbrowser-artist {
+  color: #aaa;
+}
+
+/* ACTIONS */
+.songbrowser-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.songbrowser-load-btn {
+  background: #222;
+  border: 1px solid #444;
+  color: #00aaff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.songbrowser-load-btn:hover {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.songbrowser-request-btn {
+  background: #007acc;
+  border: none;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.songbrowser-request-btn:hover {
+  background: #0090ff;
+}

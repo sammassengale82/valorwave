@@ -1,0 +1,58 @@
+.jogwheel {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1c 40%, #0f0f12 100%);
+  border: 2px solid #222;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.05s linear;
+  box-shadow: inset 0 0 12px #000, 0 0 6px #000;
+}
+
+.jogwheel.jw-scratching {
+  cursor: grabbing;
+  box-shadow: inset 0 0 14px #000, 0 0 10px #ffaa00;
+}
+
+.jogwheel.jw-playing {
+  box-shadow: inset 0 0 12px #000, 0 0 6px #00aaff;
+}
+
+.jog-center {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #111;
+  border-radius: 50%;
+  border: 2px solid #333;
+  color: #00ffff;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.jogwheel-led {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: #00aaff;
+  box-shadow: 0 0 6px #00aaff;
+}
+
+.jw-scratching .jogwheel-led {
+  background: #ffaa00;
+  box-shadow: 0 0 8px #ffaa00;
+}

@@ -1,0 +1,474 @@
+/* ============================
+   GLOBAL NEON THEME
+   ============================ */
+:root {
+  --vw-bg: #001021;
+  --vw-panel: #021a33;
+  --vw-border: rgba(0, 255, 255, 0.25);
+  --vw-glow: 0 0 12px rgba(0, 255, 255, 0.35);
+  --vw-text: #e5faff;
+}
+
+/* ============================
+   MAIN DJ SCREEN GRID
+   ============================ */
+.dj-screen {
+  display: grid;
+  grid-template-rows: 40px 64px minmax(0, 1fr) 140px 24px;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  background-color: #020617;
+  color: #e5e7eb;
+  overflow: visible;
+}
+
+/* ============================
+   TOP BAR
+   ============================ */
+.dj-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 16px;
+  background: #0b1120;
+  border-bottom: 1px solid #1f2937;
+}
+
+.dj-topbar h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* ============================
+   4-DECK GRID CONTAINER
+   ============================ */
+.dj-decks {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4px 16px;
+  overflow: visible;
+  height: 100%;
+}
+
+/* ============================
+   FULL 4-DECK GRID
+   ============================ */
+.deck-grid-4deck {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr 1.4fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  row-gap: 0.75rem;
+  width: 90vw;
+  max-width: 1600px;
+  height: 55vh;
+  margin: 0 auto;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+/* ============================
+   GRID AREA MAPPING
+   ============================ */
+.deck-slot-a { grid-column: 1; grid-row: 1; }
+.deck-slot-b { grid-column: 3; grid-row: 1; }
+.deck-slot-c { grid-column: 1; grid-row: 2; }
+.deck-slot-d { grid-column: 3; grid-row: 2; }
+
+.mixer-slot {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ============================
+   DECK INTERNAL GRID (HYBRID)
+   ============================ */
+.deck {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "metadata metadata metadata"
+    "waveform waveform waveform"
+    "jogwheel vu transport"
+    "footer footer footer";
+  grid-template-columns: 150px 1fr 70px;
+  grid-template-rows: 0.08fr 0.12fr 0.22fr 0.58fr 0.08fr;
+  gap: 10px;
+  background: #0b1120;
+  border: 1px solid var(--vw-border);
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0,255,255,0.25);
+  width: 650px;
+  height: 200px;
+  overflow: visible;
+}
+
+/* ============================
+   GRID AREA ASSIGNMENTS
+   ============================ */
+.deck-header   { grid-area: header; }
+.deck-metadata { grid-area: metadata; }
+.deck-waveform { grid-area: waveform; }
+.deck-jogwheel { grid-area: jogwheel; }
+.deck-vu       { grid-area: vu; }
+.deck-transport{ grid-area: transport; }
+.deck-footer   { grid-area: footer; }
+
+/* ============================
+   METADATA
+   ============================ */
+.deck-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 10px;
+  color: var(--vw-text);
+}
+
+.track-title {
+  font-weight: 600;
+  color: #00ffff;
+}
+
+.track-artist {
+  font-style: italic;
+  color: #94a3b8;
+}
+
+.track-info,
+.track-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #a0eaff;
+}
+
+/* ============================
+   WAVEFORM
+   ============================ */
+.deck-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.waveform-container {
+  width: 488px;
+  height: 50px;
+  background: #000;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.waveform-gl-canvas,
+.waveform-gl-overlay {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ============================
+   JOGWHEEL
+   ============================ */
+.deck-jogwheel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.jogwheel {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.jog-center {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.jogwheel-led {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(0,255,255,0.4);
+  pointer-events: none;
+}
+
+.pitch-bend-controls {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.bend-btn {
+  background: linear-gradient(to bottom, #424242, #212121);
+  border: 1px solid #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 2px;
+}
+
+/* ============================
+   VU METER
+   ============================ */
+.deck-vu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vu-meter {
+  width: 12px;
+  height: 80px;
+  border-radius: 4px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  overflow: hidden;
+}
+
+.vu-bar {
+  width: 100%;
+  background: linear-gradient(to top, #22c55e, #facc15, #ef4444);
+  transition: height 0.05s linear;
+}
+
+/* ============================
+   CONTROL GRID (VirtualDJ style)
+   ============================ */
+.deck-transport {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deck-grid {
+  background-color: #1a1a1a;
+  font-family: Arial, sans-serif;
+  padding: 6px;
+  width: 530px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 70px 75px;
+  grid-gap: 8px 12px;
+  align-items: end;
+}
+
+.grid-metrics {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  color: #a0a0a0;
+  font-size: 11px;
+  font-family: monospace;
+  display: flex;
+  gap: 12px;
+}
+
+.grid-hotcues {
+  grid-column: 2 / 5;
+  grid-row: 1;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.grid-transport {
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+
+.grid-loop {
+  grid-column: 2 / 3;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.grid-tabs {
+  grid-column: 3 / 4;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.grid-pitch {
+  grid-column: 4 / 5;
+  grid-row: 2;
+  justify-self: end;
+}
+
+/* ============================
+   INLINE PANELS (FX, Stems, Beatgrid)
+   ============================ */
+.deck-inline-panels {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* FX */
+.fx-rack {
+  background: #111;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fx-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fx-control label {
+  font-size: 9px;
+  color: #a0a0a0;
+}
+
+/* STEMS */
+.stems-panel {
+  background: #111;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #fff;
+}
+
+.stems-title {
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.stem-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stems-panel label {
+  font-size: 9px;
+  color: #a0a0a0;
+}
+
+/* BEATGRID */
+.beatgrid-tools {
+  background: #111;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.beatgrid-tools button {
+  background: #222;
+  border: 1px solid #333;
+  color: #e5e7eb;
+  font-size: 9px;
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+/* ============================
+   TRANSPORT BAR BUTTONS
+   ============================ */
+.transport-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.cue-btn,
+.play-btn,
+.sync-btn,
+.automix-btn {
+  background: linear-gradient(to bottom, #424242, #212121);
+  border: 1px solid #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.play-btn.active {
+  background: linear-gradient(to bottom, #00e676, #00a142);
+  color: #000;
+}
+
+/* ============================
+   MIXER CORE
+   ============================ */
+.mixer-core {
+  background: #0b1120;
+  border: 1px solid rgba(0,255,255,0.25);
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 416px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.mixer-channels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mixer-label {
+  font-size: 10px;
+  color: #a0a0a0;
+}
+
+.mixer-crossfader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 160px;
+  margin: 0 auto;
+}
+
+.deck-jogwheel,
+.deck-waveform,
+.deck-transport {
+  overflow: visible;
+}

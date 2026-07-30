@@ -1,0 +1,720 @@
+/* ============================
+   ValorWave global layout
+   ============================ */
+.valorwave-screen {
+  display: grid;
+  /* Fixed: Uses calc to prevent layout heights from exceeding 100vh */
+  grid-template-rows: 48px calc(55% - 26px) calc(45% - 22px);
+  height: 100vh;
+  background-color: #0b0b0f;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* Top bar */
+.vw-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background: #111;
+  border-bottom: 1px solid #222;
+}
+
+.vw-topbar-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.vw-topbar-buttons button {
+  background: #1f2933;
+  border: 1px solid rgba(0,255,255,0.3);
+  color: #e5e7eb;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Main zone (decks + mixer) */
+.vw-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 12px 20px;
+  align-items: stretch;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.vw-left-column,
+.vw-right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70%;
+}
+
+.vw-deck-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.vw-mixer-center {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.deck-group {
+  display: flex;
+  gap: 6px;
+}
+.deck-group button {
+  background: #1f2933;
+  border: 1px solid #00ffff;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.deck-group button.active {
+  background: #00ffff;
+  color: #000;
+}
+
+/* Deck container grid layout */
+.valorwave-deck {
+  background: #121212;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.25);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px 70px 60px 60px 50px 50px 30px;
+  grid-template-areas:
+    "vu jogwheel"
+    "vu jogwheel"
+    "trackinfo trackinfo"
+    "waveform waveform"
+    "stems stems" 
+    "fx fx"
+    "group shift";
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+  width: 350px;
+  height: 50vh;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Grid areas */
+.deck-jogwheel { grid-area: jogwheel; }
+.deck-meta { grid-area: info; } 
+.deck-trackinfo { grid-area: trackinfo; } /* Ensure template-areas contains 'trackinfo' if used separately */
+.deck-waveform { grid-area: waveform; }
+.deck-stems { grid-area: stems; }
+.deck-fx { grid-area: fx; }
+.deck-vu { grid-area: vu; }
+.deck-shift { grid-area: shift; }
+.deck-group { grid-area: group; }
+
+/* Deck header (optional if you add it later) */
+.deck-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.deck-label {
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* Jogwheel + controls */
+.deck-jogwheel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.jogwheel {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  border: 3px solid rgba(0,255,255,0.4);
+  box-shadow: 0 0 20px rgba(0,255,255,0.3), inset 0 0 10px rgba(0,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s linear;
+  position: relative;
+}
+
+/* gold line when playing */
+.jogwheel.playing::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 2px;
+  height: 104px;
+  background: linear-gradient(to bottom, #facc15, #b45309);
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.8);
+  transform: translateX(-50%);
+}
+
+.jog-center {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ef4444 0%, #7f1d1d 100%);
+  box-shadow: 0 0 10px rgba(255,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.jogwheel-led {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(0,255,255,0.3);
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+  pointer-events: none;
+}
+
+.pitch-bend-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pitch-bend-controls button {
+  background: #1f2933;
+  border: 1px solid rgba(0,255,255,0.3);
+  color: #e5e7eb;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Deck transport controls (play/pause/stop) */
+.deck-transport {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deck-transport button {
+  background: #1f2933;
+  border: 1px solid rgba(0,255,255,0.3);
+  color: #e5e7eb;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   UNIFIED DECK DASHBOARD (TRACK METADATA + COMPACT SCROLLING MARQUEE)
+   ========================================================================== */
+
+/* The overall bounding container cell mapped inside your layout grid system */
+.deck-trackinfo {
+  grid-area: trackinfo;  /* Links directly to your renamed layout grid row keyword */
+  height: 48px;         /* Compact block size fits both metadata and marquee comfortably */
+  background: #060608;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 4px 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Row 1: Upper Parameter Tracking Row (Time, BPM, Key) */
+.deck-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 2px;
+  background: #060608;
+  z-index: 3; /* Ensures tracking values stay on top if long text scrolls below */
+}
+
+.meta-pill {
+  font-family: monospace;
+  font-size: 10px;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+}
+
+/* Row 2: Lower Content Row holding the combined tracking string */
+.marquee-content-container {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1px;
+}
+
+/* Individual Content Item Typography */
+.track-title {
+  color: var(--deck-color, #00ffff);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.track-separator {
+  color: #555562;
+  padding: 0 6px;
+  font-size: 11px;
+}
+
+.track-artist {
+  color: #e5e7eb;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+/* Trigger animation ONLY when the text is wider than the container bounds */
+.deck-trackinfo.scrollable .marquee-content-container {
+  animation: scrollText 14s linear infinite;
+  padding-right: 80px; /* Buffer whitespace padding before duplicating loop */
+}
+
+/* Hover Safety Catch to easily read long text files while active */
+.deck-trackinfo:hover .marquee-content-container {
+  animation-play-state: paused;
+}
+
+/* Smooth Gradient Side Vignettes to cover up sharp element clip boundaries */
+.deck-trackinfo::before, 
+.deck-trackinfo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 22px; /* Isolates the gradient overlays exclusively to the marquee line space */
+  z-index: 2;
+  pointer-events: none;
+}
+.deck-trackinfo::before {
+  left: 0;
+  background: linear-gradient(to right, #060608 25%, transparent);
+}
+.deck-trackinfo::after {
+  right: 0;
+  background: linear-gradient(to left, #060608 25%, transparent);
+}
+
+/* Precise Loop Synchronization Keyframes */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Resets exactly at the midpoint to keep text alignment synchronous */
+  }
+}
+
+/* ==========================================================================
+   DECK BRANDING DESIGN THEMES
+   ========================================================================== */
+.deck-1 { --deck-color: #00ffff; }
+.deck-2 { --deck-color: #ff00ff; }
+.deck-3 { --deck-color: #facc15; }
+.deck-4 { --deck-color: #22c55e; }
+
+/* Waveform */
+.deck-waveform {
+  width: 100%;
+  height: 50px;
+  background: radial-gradient(circle at center, #000 0%, #0b0b0f 100%);
+  border: 1px solid rgba(0,255,255,0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 0 8px rgba(0,255,255,0.3);
+  overflow: hidden;
+}
+
+/* Stems + FX sliders */
+.deck-stems,
+.deck-fx {
+  display: flex;
+  flex-direction: row;        
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  gap: 20px;
+}
+
+.stems-knobs-row,
+.fx-knobs-row {
+  grid-row: 1;
+  grid-column: 1 / span 4;
+  /* Fixed: Swapped flex definition to grid to respect column rules */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-items: center;
+}
+
+.stems-knob-group,
+.fx-knob-group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 8px;
+  width:100%;
+}
+
+.stems-knob-label,
+.fx-knob-label {
+  color: #00ffff;
+  font-size: 10px;
+  white-space: nowrap;
+  min-width: 45px;
+}
+
+.stems-panel input[type="range"],
+.fx-panel input[type="range"] {
+  flex: 1;
+  width: 100%;
+}
+
+/* VU meter */
+.deck-vu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-vu-meter {
+  position: relative;
+  width: 10px;
+  height: 60px;
+  background: #0a0a0a;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+}
+
+.deck-vu-bar {
+  width: 100%;
+  background: linear-gradient(to top, #22c55e, #facc15, #ef4444);
+  transition: height 0.05s linear;
+}
+
+.deck-vu-peak {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #facc15;
+  top: 0;
+  transition: top 0.1s linear;
+}
+
+.deck-vu-clip {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: red;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.deck-vu-clip.active {
+  opacity: 1;
+}
+
+/* Shift / Tighten controls */
+.deck-shift {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.deck-shift button {
+  background: #1f2933;
+  border: 1px solid rgba(0,255,255,0.3);
+  color: #e5e7eb;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Mixer Grid Layout */
+.mixer-grid {
+  display: grid;
+  /* Fixed: Swapped hardcoded px to flexible proportional fr fractions */
+  grid-template-rows: 58% 22% 18%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 2px;
+  height: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ROW 1 — KNOBS */
+.knobs-row {
+  grid-row: 1;
+  grid-column: 1 / span 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 8px rgba(0,255,255,0.3);
+}
+
+.knob-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.knob-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.knob-label {
+  color: #00ffff;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+/* ROW 2 — VOLUME + VU */
+.volume-row {
+  grid-row: 2;
+  grid-column: 1 / span 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 4px;
+  padding: 2px;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 8px rgba(0,255,255,0.3);
+  overflow: hidden;
+}
+
+/* Deck cell: horizontal 60/40 split */
+.mixer-column {
+  display: grid;
+  grid-template-columns: 50% 50%; 
+  align-items: center;
+  height: 100%;
+}
+
+.mixer-column input[type="range"] {
+  grid-column: 1;
+  justify-self: center;
+}
+
+/* Explicit slider container alignment */
+.volume-slider-container {
+  grid-column: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-height: 64px;
+  gap: 4px;
+}
+
+/* Enforce native inputs to clear cross-browser overrides */
+.volume-slider-vertical {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 14px;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Vertical tick flexbox wrapper */
+.volume-slider-ticks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Slightly padded to match internal track boundaries */
+  width: 4px;
+}
+
+/* Individual accent ticks */
+.v-tick {
+  width: 4px;
+  height: 1px;
+  background-color: #444;
+}
+
+/* Make every half-way mark and peak level indicator stick out */
+.v-tick:nth-child(1),
+.v-tick:nth-child(6),
+.v-tick:nth-child(11) {
+  width: 6px;
+  background-color: #00ffff;
+}
+
+/* Right side: vertical 80/20 split */
+.mixer-vu-percent-group {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 2px;
+}
+
+.volume-percent {
+  position: relative;
+  color: #00ffff;
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.mixer-vu-meter {
+  width: 10px;
+  height: 48px;
+  background: #111;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid #222;
+  overflow: hidden;
+}
+
+.mixer-vu-bar {
+  width: 100%;
+  background: #00ffff;
+  position: absolute;
+  bottom: 0;
+}
+
+.mixer-vu-peak {
+  width: 100%;
+  height: 3px;
+  background: #f00;
+  position: absolute;
+}
+
+.mixer-vu-clip {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: red;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.mixer-vu-clip.active {
+  opacity: 1;
+  background: red;
+}
+
+/* ROW 3 — CROSSFADER */
+.crossfader-row {
+  grid-row: 3;
+  grid-column: 1 / span 4;
+  display: grid;
+  align-items: center;
+  /* Fixed: Scaled layout grid columns dynamically to support alignment blocks */
+  grid-template-columns: 1.5fr 4fr 1.5fr;
+  gap: 8px;
+  padding: 6px;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 6px rgba(0,255,255,0.3);
+  overflow: hidden;
+}
+
+/* Fixed: Remapped column coordinates to lock inside the active 3-column model */
+.crossfade-left { 
+  grid-column: 1; 
+}
+.crossfade-center { 
+  grid-column: 2; 
+  width: 100%;
+}
+.crossfade-right { 
+  grid-column: 3; 
+}
+
+.crossfade-routing {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: #111;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.crossfade-box {
+  background: #222;
+  color: white;
+  padding: 3px 0;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.crossfade-box.selected {
+  color: #00ffff;
+  background: #08c002;
+  border: 1px solid #00ffff;
+}
+
+.curve-selector-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+.curve-label {
+  font-size: 9px;
+  color: #888;
+  font-weight: bold;
+}
+.curve-dropdown {
+  background: #1a1a1f;
+  color: #00ffff;
+  border: 1px solid #333;
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}

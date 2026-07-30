@@ -1,0 +1,55 @@
+.beatgrid-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #16161a;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #2a2a2e;
+}
+
+.beatgrid-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7aa2ff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.beatgrid-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.beatgrid-btn {
+  flex: 1;
+  padding: 6px 8px;
+  background: #222;
+  border: 1px solid #444;
+  color: #ccc;
+  font-size: 11px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.beatgrid-btn:hover {
+  background: #2c2c2c;
+}
+
+.beatgrid-btn.tighten {
+  background: #007acc;
+  border-color: #007acc;
+  color: #fff;
+  font-weight: 600;
+}
+
+.beatgrid-btn.tighten:hover {
+  background: #0090ff;
+}
+
+.beatgrid-status {
+  font-size: 10px;
+  color: #888;
+  margin-top: 4px;
+}

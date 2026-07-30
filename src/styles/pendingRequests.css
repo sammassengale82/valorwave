@@ -1,0 +1,144 @@
+.pr-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  background: #111113;
+  color: #e0e0e6;
+  font-family: sans-serif;
+}
+
+/* Header */
+.pr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 6px;
+}
+
+.pr-title {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pr-refresh-btn {
+  background: #222;
+  border: 1px solid #444;
+  color: #00aaff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.pr-refresh-btn:hover {
+  background: #2a2a2d;
+}
+
+.pr-refreshing {
+  color: #555 !important;
+  cursor: wait;
+}
+
+/* List */
+.pr-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pr-empty {
+  padding: 30px 10px;
+  text-align: center;
+  color: #444;
+  font-size: 12px;
+}
+
+/* Item */
+.pr-item {
+  display: grid;
+  grid-template-columns: 1fr 130px;
+  align-items: center;
+  padding: 6px 10px;
+  background: #16161a;
+  border-bottom: 1px solid #1a1a1c;
+  border-radius: 3px;
+}
+
+.pr-meta {
+  min-width: 0;
+  padding-right: 8px;
+}
+
+.pr-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.pr-returning {
+  font-size: 9px;
+  color: #00ffcc;
+  background: rgba(0, 255, 200, 0.08);
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 6px;
+}
+
+.pr-song {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* Actions */
+.pr-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.pr-accept {
+  background: #007acc;
+  border: none;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.15s;
+}
+
+.pr-accept:hover {
+  background: #0094ff;
+}
+
+.pr-reject {
+  background: #222;
+  border: 1px solid #444;
+  color: #ff5555;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.pr-reject:hover {
+  background: #2a2a2d;
+}

@@ -1,0 +1,107 @@
+/* src/styles/systemfeedback.css */
+.system-telemetry-hud {
+  background: #121214;
+  padding: 10px 14px;
+  border-radius: 4px;
+  color: #e0e0e6;
+  font-family: monospace;
+  font-size: 11px;
+  border: 1px solid #252529;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 240px;
+  user-select: none;
+}
+
+.sf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  padding-bottom: 4px;
+}
+
+.sf-title {
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sf-status {
+  font-weight: bold;
+}
+
+.sf-status-ok {
+  color: #00ffcc;
+}
+
+.sf-status-warning {
+  color: #ffaa00;
+}
+
+.sf-status-critical {
+  color: #ff3333;
+}
+
+.sf-status-muted {
+  color: #666;
+}
+
+.sf-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sf-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sf-label {
+  color: #aaa;
+}
+
+.sf-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sf-bar {
+  width: 60px;
+  height: 4px;
+  background: #222;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sf-bar-fill {
+  height: 100%;
+}
+
+.sf-value {
+  width: 42px;
+  text-align: right;
+}
+
+.sf-latency {
+  font-weight: bold;
+}
+
+.sf-dropouts {
+  font-weight: bold;
+}
+
+.sf-runtime {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid #1a1a1c;
+  color: #444;
+}
+
+.sf-runtime-value {
+  color: #888;
+}

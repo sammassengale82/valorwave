@@ -1,0 +1,87 @@
+.track-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 60px 60px 60px 80px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #16161a;
+  font-size: 11px;
+  color: #ccc;
+  cursor: grab;
+  position: relative;
+  user-select: none;
+  transition: background 0.12s ease;
+}
+
+.track-row:hover {
+  background: #1a1a24;
+}
+
+.track-row--playing {
+  background: rgba(0, 170, 255, 0.08);
+  border-left: 3px solid #00aaff;
+}
+
+.track-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-title {
+  font-weight: 600;
+}
+
+.track-artist {
+  color: #aaa;
+}
+
+.track-bpm {
+  color: #00ffcc;
+  font-family: monospace;
+}
+
+.track-key-pill {
+  background: #262200;
+  color: #ffcc00;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 10px;
+}
+
+.track-duration {
+  color: #888;
+}
+
+.track-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.track-load-btn {
+  background: #1f1f26;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.track-load-btn:hover {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.track-wave-preview {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  background: #000;
+  border-left: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}

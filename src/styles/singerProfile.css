@@ -1,0 +1,101 @@
+/* Container */
+.sp-panel {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #e5e7eb;
+}
+
+.sp-empty {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+/* Header */
+.sp-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00ffff;
+}
+
+.sp-notes {
+  font-size: 13px;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* Section */
+.sp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ffff;
+}
+
+/* Grid */
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.sp-box {
+  background: #16161a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sp-box label {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.sp-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Analytics */
+.sp-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: #ccc;
+}
+
+.sp-history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sp-history-item {
+  background: #1a1a1d;
+  border: 1px solid #222;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.sp-history-date {
+  font-size: 11px;
+  color: #888;
+}

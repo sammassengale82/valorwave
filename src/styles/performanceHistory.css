@@ -1,0 +1,77 @@
+/* Container */
+.ph-panel {
+  background: #0f0f12;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #e5e7eb;
+}
+
+/* Title */
+.ph-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ffff;
+  margin-bottom: 4px;
+}
+
+/* Empty state */
+.ph-empty {
+  font-size: 12px;
+  color: #777;
+  padding: 6px 0;
+}
+
+/* List container */
+.ph-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Individual entry */
+.ph-item {
+  background: #16161a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Song name */
+.ph-song {
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Stats row */
+.ph-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+/* Individual stat */
+.ph-stat {
+  background: rgba(0, 255, 200, 0.08);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #00ffcc;
+  font-weight: 500;
+}
+
+/* Date */
+.ph-date {
+  font-size: 10px;
+  color: #888;
+}
